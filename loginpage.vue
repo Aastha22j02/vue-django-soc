@@ -60,8 +60,12 @@ export default {
 
           this.$router.push('/home')
         })
+    
         .catch((error) => {
           this.error = error.response.data.error;
+          this.username = null
+          this.password = null
+          
           setTimeout(() => {
             this.error = null; // This will hide the error message after 1 second
           }, 1000);
